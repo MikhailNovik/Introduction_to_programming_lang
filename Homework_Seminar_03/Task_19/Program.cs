@@ -5,8 +5,11 @@
 12821 -> да
 23432 -> да
 */
-bool IsPalindrome(string input)
+
+bool IsPalindrome(int num)
 {
+    string input = num.ToString();
+
     if (input[0] == input[4] && input[1] == input[3])
     {
         return true;
@@ -18,9 +21,9 @@ bool IsPalindrome(string input)
 }
 
 Console.Write("Введите пятизначное число: ");
-string input = Console.ReadLine()!;
+int num = int.Parse(Console.ReadLine()!);
 
-if (IsPalindrome(input))
+if (IsPalindrome(num))
 {
     Console.WriteLine("Введенное пятизначное число является палиндромом");
 }

@@ -7,7 +7,11 @@ A (7,-5, 0); B (1,-1,9) -> 11.53
 
 double GetDistanceBetweenPoints(double xA, double yA, double zA, double xB, double yB, double zB)
 {
-    double distanceBetweenPoints = Math.Sqrt((xB - xA) * (xB - xA) + (yB - yA) * (yB - yA) + (zB - zA) * (zB - zA));
+    double distanceBetweenPoints = Math.Sqrt(
+        (xB - xA) * (xB - xA)
+         + (yB - yA) * (yB - yA)
+          + (zB - zA) * (zB - zA)
+        );
     return Math.Round(distanceBetweenPoints, 2);
 }
 
