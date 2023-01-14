@@ -12,7 +12,6 @@ int GetExponentiation(int basePower, int exponentPower)
     {
         result *= basePower;
     }
-
     return result;
 }
 
