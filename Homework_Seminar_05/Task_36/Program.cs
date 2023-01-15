@@ -1,6 +1,12 @@
 ﻿/*
+Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+Найдите сумму элементов, стоящих на чётных позициях.
 
+[3, 7, 23, 12] -> 19
+
+[-4, -6, 89, 6] -> 0
 */
+
 int[] CreateArray(int count)
 {
     return new int[count];
@@ -17,14 +23,20 @@ void FillArray(int[] array, int minValue, int maxValue)
     }
 }
 
-void ReplaceElemWithAppropriate(int[] array)
+int GetSumElementsEvenPositions(int[] array)
 {
     int length = array.Length;
+    int sumElementsEvenPos = 0;
     
     for (int i = 0; i < length; i++)
     {
-        array[i] *= -1;
+        if ((i + 1) % 2 == 0)
+        {
+            sumElementsEvenPos += array[i];
+        }
     }
+
+    return sumElementsEvenPos;
 }
 
 string PrintArray(int[] array)
@@ -38,7 +50,7 @@ string PrintArray(int[] array)
 Console.Write("Введите число элементов в массиве: ");
 int count = int.Parse(Console.ReadLine()!);
 int[] arr = CreateArray(count);
-FillArray(arr, -9, 9);
+FillArray(arr, -99, 99);
 Console.WriteLine(PrintArray(arr));
-ReplaceElemWithAppropriate(arr);
-Console.WriteLine(PrintArray(arr));
+int sumElem = GetSumElementsEvenPositions(arr);
+Console.WriteLine($"Сумма элементов, стоящих на чётных позициях в массиве: {sumElem}");
