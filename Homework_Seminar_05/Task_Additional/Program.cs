@@ -24,18 +24,20 @@ void FillArray(int[] array, int minValue, int maxValue)
 
 int GetLengthNewArray(int[] oldArray)
 {
-    int lengthNewArray = 0;
     int lengthOldArray = oldArray.Length;
+    int lengthNewArray = (lengthOldArray + 1) / 2;
     
+    /*
     if (lengthOldArray % 2 == 0)
     {
         lengthNewArray = lengthOldArray / 2;                       
     }    
     else
     {
-        lengthNewArray = lengthOldArray / 2 + 1;
+        lengthNewArray = (lengthOldArray / 2) + 1;
     }
-
+    */
+    
     return lengthNewArray;
 }
 
