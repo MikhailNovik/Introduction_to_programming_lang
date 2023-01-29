@@ -13,11 +13,14 @@ int RecSumNumbersFromMToN(int startNum, int endNum)
     }
     else
     {
-        int sum = startNum + RecSumNumbersFromMToN(startNum + 1, endNum);
-        return sum;
+        return startNum + RecSumNumbersFromMToN(startNum + 1, endNum);
     }
 }
-int startNumber = 1;
-int endNumber = 15;
-int sumNum = RecSumNumbersFromMToN(startNumber, endNumber);
-Console.WriteLine($"Cумма натуральных чисел от {startNumber} до {endNumber}: {sumNum}");
+
+Console.Write("Введите натуральное число M: ");
+int M = int.Parse(Console.ReadLine()!);
+Console.Write("Введите натуральное число N (число N должно быть больше числа M): ");
+int N = int.Parse(Console.ReadLine()!);
+
+int sumNum = RecSumNumbersFromMToN(M, N);
+Console.WriteLine($"Cумма натуральных чисел от {M} до {N}: {sumNum}");
